@@ -5,12 +5,14 @@
 }
 body{
     background-color: rgb(58, 58, 116);
+    font-family: 'Open Sans', sans-serif;
 }
 .cont{
-    width: 80vw;
+    width: 900px;
     height: 70vh;
-    background-color: bisque;
+    background-color: rgb(81, 81, 165);
     margin: 15vh auto;    
+    box-shadow: 15px 5px 50px rgba(0, 0, 0, 0.209);
 }
 .cont form{
     height: 100%;
@@ -21,40 +23,57 @@ body{
     align-items: center;
 }
 .cont form input[type="text"], .cont form input[type="password"]{
-    width: 60%;
-    height: 15%;
+    width: 500px;
+    height: 50px;
     padding-left: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     border-style: none;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.218);
 
 }
 .cont form .img{
-    width: 200px;
-    height: 50px;    
+    width: 250px;
+    height: 60px;    
     position: relative;
-    text-align: center;
-    display: flex;
-    background-color: aqua;
+    display: flex; 
+    padding: 10px;    
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.235);
     align-items: center;
-    cursor: pointer;
-    justify-content: center;    
+    text-align: center;    
+    cursor: pointer;            
 }
 .cont form .img label{
     cursor: pointer;    
-    background-color: beige;
+    font-size: 1rem;    
 }
 .cont form .img input{
     position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;    
-    opacity: 100;
+    opacity: 0;    
     cursor: pointer;
-    z-index: 100;
-    background-color: blue;
-
+}
+.cont form input[type="submit"]{
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.218);
+    transition: 0.3s;
+}
+.cont form input[type="submit"]:hover{
+    transform: scale(1.1);
+    width: 90.8%;
+    font-size: 1.1rem;
+    border-radius: 0;
+    background-color: rgb(88, 55, 180);
+    color: white;
+    box-shadow: 0px 0px 2px rgb(0, 170, 255);
 }
