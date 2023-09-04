@@ -9,25 +9,25 @@
 <body>    
     <?php
     include('conexxion.php');
+    // include('redimensionarImagen.php');
         if (isset($_POST['usuario'])) {
             $user = $_POST['usuario'];
             $pass = $_POST['contrasenia'];
-            if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
-                move_uploaded_file($_FILES["imagen"]["tmp_name"],$_FILES["imagen"]["name"]);
-            }
-            $img = $_FILES["imagen"]["name"];
-            $img= redimensionarImg($img, 200, 200);
-            unlink($_FILES["imagen"]["name"]); //borra la imagen original guardada en la raiz del proyecto 
-            $sql = '';
-            $registrar= mysqli_query($conexion, $sql)? print("<script>alert('borrado');</script>"): print('error al borrar');
+            $foto = $_FILES["imagen"]['tmp_name'];
+            echo '
+            usuario: '.$user.'
+            pass: '.$pass.'
+            ';
+            // if(is_uploaded_file($_FILES['imagen']["tmp_name"])){
+            //     move_uploaded_file($_FILES["imagen"]["tmp_name"],'imagenes/'.$_FILES["imagen"]["name"]);
+            // }
+            // $foto = 'imagenes/'.$_FILES["imagen"]["name"];
+            // echo ($foto);
+            // $Nimg = redimensionarImagen($foto, 200, 200);
+            // unlink($_FILES["imagen"]["name"]); //borra la imagen original guardada en la raiz del proyecto 
+            $sql = "INSERT INTO usuarios (Nbr_u, Pass_u) VALUES ('.$user.', '.$pass.')";
+            $registrar= mysqli_query($conexxion, $sql)? print("<script>alert('usuario creado'); window.location='form_registro.html';</script>"): print('error al crear');
         }
     ?>
-    <div class="cont">
-        <form action="" method="post">
-            <input type="text" name="usuario" placeholder="Ingrese su nombre">
-            <input type="password" name="contrasenia" placeholder="Ingrese su contraseña">
-            <input type="file" name="imagen" placeholder="Ingrese su foto de perfil">                        
-        </form>
-    </div>
 </body>
 </html>

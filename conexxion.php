@@ -1,7 +1,7 @@
 <?php
-$server="LOCALHOST";
+$server="localhost";
 $user= "root";
-$password=" ";
+$password="";
 $db="mudsic";
-$conexxion=mysqli_conect($server, $user, $password, $BD)
+$conexxion=mysqli_connect($server, $user, $password, $db)
 ?>
