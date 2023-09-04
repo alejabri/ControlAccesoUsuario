@@ -11,7 +11,11 @@
         <form action="" method="post">
             <input type="text" name="usuario" placeholder="Ingrese su nombre">
             <input type="password" name="contrasenia" placeholder="Ingrese su contraseña">
-            <input type="file" name="imagen" placeholder="Ingrese su foto de perfil">                        
+            <div class="img">
+                <label for="">Clickee aquí para subir su foto de perfil</label>
+                <input type="file" name="imagen" id="img" accept=".png, .jpg">                        
+            </div>
+            <input type="submit" value="subir" name="subir">
         </form>
     </div>
 </body>
